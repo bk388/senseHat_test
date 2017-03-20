@@ -14,20 +14,16 @@ deltaTime_prev = -1
 sense.stick.get_events()
 while not end:
     deltaTime = time.time() - initTime
-    deltaTime = round(deltaTime, 2)%60
+    deltaTime = round(deltaTime, 2)%20
     if not deltaTime_prev == deltaTime:
         deltaTime_prev = deltaTime
-        angle = 2*np.pi*float(deltaTime)/60.0 + np.pi
+        angle = 2*np.pi*float(deltaTime)/20.0 + np.pi
         image = getLineImage(4, angle, 4, [255, 0, 0])
-        #sense.set_pixels(image)
-        for row in range(8):
-            for column in range(8):
-                try:
-                    sense.set_pixel(column, row, image[column, row, 0], image[column, row, 1], image[column, row, 2])
-                except:
-                    print(image[column, row])
-                    pass
+        try:
+            sense.set_pixels(image)
+        except:
+            print("error")
+            pass
     if not len(sense.stick.get_events()) == 0:
         end = True
         sense.clear()
-        
