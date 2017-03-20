@@ -13,7 +13,7 @@ def getPixelValue(px, centre, angle, length, intensity=1.0):
     if signY == 0:
         signY = 1
         
-    if np.any(px == 0):
+    if np.all(px == 0):
         return intensity/2
     if px[0]*np.cos(angle)<0 or px[1]*np.sin(angle)<0:
         return 0
