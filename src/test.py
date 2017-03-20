@@ -11,7 +11,4 @@ angle = 2*np.pi*float(deltaTime)/60.0 + np.pi
 image = getLineImage(4, angle, 4, [255, 0, 0])
 print(image)
 print(image.shape)
-for row in range(8):
-    for column in range(8):
-        print(image[column, row, 0], image[column, row, 1], image[column, row, 2])
 #end
