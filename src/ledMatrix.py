@@ -58,7 +58,7 @@ def getPixelValue(px, centre, angle, length, intensity=1.0):
     #last line could have been done with (x_outer-x_inner)/cos(angle), but it wouldn't work when cos(angle) == 0
 
 def getLineImage(centre, angle, length, colour, width=8, height=8):
-    ledIntensities = np.zeros(width, height)
+    ledIntensities = np.zeros([width, height])
     for xx in range(2*int(length) + 3):
         for yy in range(2*int(length) + 3):
             if xx < 8 and yy < 8:
