@@ -68,4 +68,4 @@ def getLineImage(centre, angle, length, colour, width=8, height=8):
     ledValues = np.array([ledIntensities, ledIntensities, ledIntensities])
     ledValues = ledValues.T*colour
     ledValues = ledValues.astype(int)
-    return np.flipud(ledValues.reshape(64, 3))
+    return ledValues.reshape(64, 3)[::-1]
