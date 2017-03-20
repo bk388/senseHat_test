@@ -9,3 +9,4 @@ deltaTime_prev = -1
 #while not end:
 angle = 2*np.pi*float(deltaTime)/60.0 + np.pi
 image = getLineImage(4, angle, 4, [255, 0, 0])
+#end
