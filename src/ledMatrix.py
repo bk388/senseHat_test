@@ -65,8 +65,9 @@ def getLineImage(centre, angle, length, colour, width=8, height=8):
                 ledIntensities[xx, 7-yy] = getPixelValue((xx, yy), centre, angle, length)
     
     colour = np.array(colour)
-    ledValues = ledIntensities.T*colour
-    ledValues = ledValues
+    ledValues = np.array([ledIntensities, ledIntensities, ledIntensities])
+    ledValues = ledValues.T*colour
+    ledValues = ledValues.T
     return ledValues
 
 
