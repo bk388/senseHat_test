@@ -22,7 +22,10 @@ while not end:
         #sense.set_pixels(image)
         for row in range(8):
             for column in range(8):
-                sense.set_pixel(column, row, image[column, row, 0], image[column, row, 1], image[column, row, 2])
+                try:
+                    sense.set_pixel(column, row, image[column, row, 0], image[column, row, 1], image[column, row, 2])
+                except:
+                    pass
     if not len(sense.stick.get_events()) == 0:
         end = True
         sense.clear()
