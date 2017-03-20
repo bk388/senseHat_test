@@ -19,7 +19,10 @@ while not end:
         deltaTime_prev = deltaTime
         angle = 2*np.pi*float(deltaTime)/60.0 + np.pi
         image = getLineImage(4, angle, 4, [255, 0, 0])
-        sense.set_pixels(image)
+        #sense.set_pixels(image)
+        for row in range(8):
+            for column in range(8):
+                sense.set_pixel(column, row, image[column, row, 0], image[column, row, 1], image[column, row, 2])
     if not len(sense.stick.get_events()) == 0:
         end = True
         sense.clear()
