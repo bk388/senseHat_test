@@ -25,6 +25,7 @@ while not end:
                 try:
                     sense.set_pixel(column, row, image[column, row, 0], image[column, row, 1], image[column, row, 2])
                 except:
+                    print(image[column, row])
                     pass
     if not len(sense.stick.get_events()) == 0:
         end = True
