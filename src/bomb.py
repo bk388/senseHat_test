@@ -46,4 +46,5 @@ while not explode:
     if deltaTime >= timer:
         explode = True
         
+print("BOOOM!")
 sense.clear()
