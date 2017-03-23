@@ -43,7 +43,7 @@ while not explode:
         except:
             print("error")
             pass
-    if deltaTime == timer:
+    if deltaTime >= timer:
         explode = True
         
 sense.clear()
