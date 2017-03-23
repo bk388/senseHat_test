@@ -21,11 +21,18 @@ while not timer_set:
             timer_set = True
     timer += increase
     timer = timer%60
-    sense.show_message(str(timer), text_colour=[0, 255, 0], scroll_speed=0.05)
+    if timer < 10:
+        sense.show_letter(str(timer), text_colour=[0, 255, 0])
+    else:
+        sense.show_message(str(timer), text_colour=[0, 255, 0], scroll_speed=0.05)
+
     
 time.sleep(0.5)
+if timer < 10:
+    sense.show_letter(str(timer), text_colour=[0, 0, 255])
+else:
+    sense.show_message(str(timer), text_colour=[0, 0, 255], scroll_speed=0.05)
 
-sense.show_message(str(timer), text_colour=[0, 0, 255], scroll_speed=0.05)
 sense.stick.get_events()
 sense.stick.wait_for_event()
 explode = False
