@@ -20,6 +20,7 @@ while not timer_set:
         elif event[1] == "middle" and event[2] == "pressed":
             timer_set = True
         print(event)
+    timer += increase
     sense.show_letter(str(timer))
     
 time.sleep(5)
