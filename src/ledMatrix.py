@@ -18,7 +18,7 @@ def getPixelValue(px, centre, angle, length, intensity=1.0):
     if px[0]*np.cos(angle)<0 or px[1]*np.sin(angle)<0:
         return 0
     
-    unitLen = abs( 1 / max(np.cos(angle), np.sin(angle)) )
+    unitLen = 1 / max( abs(np.cos(angle)), abs(np.sin(angle)) )
     
     x_vert_inner = px[0] - 0.5*signX
     y_vert_inner = x_vert_inner * np.tan(angle)
