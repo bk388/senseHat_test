@@ -21,10 +21,12 @@ while not timer_set:
             timer_set = True
     timer += increase
     timer = timer%10
-    sense.show_letter(str(timer), text_colour=[0, 0, 255])
+    sense.show_letter(str(timer), text_colour=[0, 255, 0])
     
 time.sleep(0.5)
 
+sense.show_letter(str(timer), text_colour=[0, 0, 255])
+sense.stick.get_events()
 sense.stick.wait_for_event()
 explode = False
 initTime = time.time()
