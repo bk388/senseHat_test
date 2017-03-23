@@ -20,12 +20,12 @@ while not timer_set:
         elif event[1] == "middle" and event[2] == "pressed":
             timer_set = True
     timer += increase
-    timer = timer%10
-    sense.show_letter(str(timer), text_colour=[0, 255, 0])
+    timer = timer%60
+    sense.show_message(str(timer), text_colour=[0, 255, 0], text_speed=0.05)
     
 time.sleep(0.5)
 
-sense.show_letter(str(timer), text_colour=[0, 0, 255])
+sense.show_letter(str(timer), text_colour=[0, 0, 255], text_speed=0.05)
 sense.stick.get_events()
 sense.stick.wait_for_event()
 explode = False
