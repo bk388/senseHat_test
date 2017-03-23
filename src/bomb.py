@@ -28,6 +28,7 @@ while not timer_set:
 
     
 time.sleep(0.5)
+sense.stick.get_events()
 while len(sense.stick.get_events()) == 0:
     if timer < 10:
         sense.show_letter(str(timer), text_colour=[0, 0, 255])
