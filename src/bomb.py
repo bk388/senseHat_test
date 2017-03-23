@@ -36,13 +36,14 @@ while not explode:
     deltaTime = round(deltaTime, 2)
     if not deltaTime_prev == deltaTime:
         deltaTime_prev = deltaTime
-        angle = 2*np.pi*float(deltaTime)/timer + np.pi*int(np.pi)/2 #https://xkcd.com/1275
-        image = getLineImage(4, -angle, 4, [255, 0, 0])
-        try:
-            sense.set_pixels(image)
-        except:
-            print("error")
-            pass
+        if timer != 0:
+            angle = 2*np.pi*float(deltaTime)/timer + np.pi*int(np.pi)/2 #https://xkcd.com/1275
+            image = getLineImage(4, -angle, 4, [255, 0, 0])
+            try:
+                sense.set_pixels(image)
+            except:
+                print("error")
+                pass
     if deltaTime >= timer:
         explode = True
         
