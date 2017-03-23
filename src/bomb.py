@@ -47,4 +47,10 @@ while not explode:
         explode = True
         
 print("BOOOM!")
+
+path = "./img/explosion/explosion"
+for frame in range(12):
+    sense.load_image(path + str(frame) + ".jpg")
+    time.sleep(0.1)
+
 sense.clear()
