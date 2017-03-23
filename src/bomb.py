@@ -21,7 +21,8 @@ while not timer_set:
             timer_set = True
         print(event)
     timer += increase
-    sense.show_letter(str(timer))
+    timer = timer%10
+    sense.show_letter(str(timer), text_colour=[0, 0, 255])
     
 time.sleep(5)
 sense.clear()
