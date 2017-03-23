@@ -33,7 +33,7 @@ deltaTime_prev = -1
 
 while not explode:
     deltaTime = time.time() - initTime
-    deltaTime = round(deltaTime, 2)%timer
+    deltaTime = round(deltaTime, 2)
     if not deltaTime_prev == deltaTime:
         deltaTime_prev = deltaTime
         angle = 2*np.pi*float(deltaTime)/timer + np.pi*int(np.pi)/2 #https://xkcd.com/1275
