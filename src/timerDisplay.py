@@ -20,7 +20,7 @@ while not end:
     if not deltaTime_prev == deltaTime:
         deltaTime_prev = deltaTime
         angle = 2*np.pi*float(deltaTime)/PERIOD + np.pi*int(np.pi)/2 #https://xkcd.com/1275
-        image = getLineImage((4.5, 4.5), -angle, 4, [255, 0, 0])
+        image = getLineImage((3.5, 3.5), -angle, 4, [255, 0, 0])
         try:
             sense.set_pixels(image)
         except:
