@@ -78,7 +78,7 @@ def getLineImage(centre, angle, length, colour, width=8, height=8):
     for xx in range(2*int(length) + 3):
         for yy in range(2*int(length) + 3):
             if xx < 8 and yy < 8:
-                ledIntensities[xx, 7-yy] = getPixelValue((float(xx), float(yy)), centre, angle, length)
+                ledIntensities[xx, 7-yy] = getPixelValue((float(xx), float(yy)), centre, angle, length, gaussian=True)
 
     colour = np.array(colour)
     ledValues = (np.array([ledIntensities, ledIntensities, ledIntensities]).T*colour).astype(int)
