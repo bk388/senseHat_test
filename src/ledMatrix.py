@@ -78,8 +78,8 @@ def getPixelValue(px, centre, angle, length, intensity=1.0, gaussian=True):
 
 def getLineImage(centre, angle, length, colour, width=8, height=8):
     ledIntensities = np.zeros([width, height])
-    for xx in range(2*int(length) + 3):
-        for yy in range(2*int(length) + 3):
+    for xx in range(2*int(width) + 3):
+        for yy in range(2*int(height) + 3):
             if xx < 8 and yy < 8:
                 ledIntensities[xx, 7-yy] = getPixelValue((float(xx), float(yy)), centre, angle, length, gaussian=True)
 
