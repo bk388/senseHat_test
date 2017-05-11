@@ -20,5 +20,7 @@ while len(sense.stick.get_events()) == 0:
     rotMatrix = np.array([[1.0, 0.0, 0.0], [0.0, np.cos(dPhi), -np.sin(dPhi)], [0.0, np.sin(dPhi), np.cos(dPhi)]])
     line = line.dot(rotMatrix)
     sense.set_pixels(draw3dVector([4, 4], line, [255, 0, 0]))
+    if deltaTime == deltaTime % 1:
+        print(line)
     
 sense.clear()
