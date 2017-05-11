@@ -27,7 +27,8 @@ while not end:
     events = sense.stick.get_events()
     deltaTime = time.time() - prevTime
     prevTime = prevTime + deltaTime
-    dPhi = omega * deltaTime
+    #dPhi = omega * deltaTime
+    dPhi = 0.1
     if len(events) != 0:
         for event in events:
             print(event.direction, event.action)
