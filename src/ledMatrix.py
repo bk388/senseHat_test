@@ -89,9 +89,9 @@ def draw3dVector(centre, vecToDraw, colour):
     angle = 0.0
     if vecToDraw[0] == 0.0:
         if vecToDraw[1] >= 0:
-            angle = np.pi
+            angle = np.pi/2
         else:
-            angle = -np.pi
+            angle = -np.pi/2
     else:
         angle = np.arctan(vecToDraw[1]/vecToDraw[0])
         if vecToDraw[0] < 0:
