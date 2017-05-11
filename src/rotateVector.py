@@ -33,7 +33,7 @@ while not end:
             print(event.direction, event.action)
             if event.direction == "middle":
                 end = True
-            elif (event.direction == "left" and event.action == "pressed") or (event.direction == "left" and event.action == "held"):
+            elif event.direction == "left" and event.action == "pressed":
                 print("echo")
                 rotMatrix = np.array([[1.0, 0.0, 0.0], [0.0, np.cos(dPhi), -np.sin(dPhi)], [0.0, np.sin(dPhi), np.cos(dPhi)]])
                 line = line.dot(rotMatrix)
