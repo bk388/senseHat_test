@@ -94,6 +94,6 @@ def draw3dVector(centre, vecToDraw, colour):
             angle = -np.pi
     else:
         angle = np.arctan(vecToDraw[1]/vecToDraw[0])
-        if vecToDraw[1] < 0:
-            angle = -angle
+        if vecToDraw[0] < 0:
+            angle = angle + np.pi
     return getLineImage(centre, angle, length, colour)
