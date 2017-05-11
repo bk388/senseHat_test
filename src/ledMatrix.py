@@ -2,7 +2,7 @@
 
 import numpy as np
 
-def getPixelValue(px, centre, angle, length, intensity=1.0, gaussian=False):
+def getPixelValue(px, centre, angle, length, intensity=1.0, gaussian=True):
     
     px = np.array(px)
     centre = np.array(centre)
@@ -11,9 +11,7 @@ def getPixelValue(px, centre, angle, length, intensity=1.0, gaussian=False):
     theLine = theLine * length
         
     if gaussian:
-        if px[0] == 0 and px[1] == 0:
-            dist = 0
-        elif np.dot(theLine, px) <= 0 or length == 0:
+        if np.dot(theLine, px) <= 0 or length == 0:
             dist = np.linalg.norm(px)
         elif np.dot(px-theLine, -theLine) <= 0:
             dist = np.linalg.norm(px-theLine)
@@ -21,7 +19,10 @@ def getPixelValue(px, centre, angle, length, intensity=1.0, gaussian=False):
             lineDirection = theLine/length
             rotPi = np.array([[0, 1], [-1, 0]])
             dist = px.dot(lineDirection.dot(rotPi))
-        intensity = np.exp(-8*(dist**2))
+        intensity = np.exp(-8.0*(dist**2.0))
+        if px[0] == 0 and px[1] == 0:
+            intensity = 1.0
+        
     else:
         signX = np.sign(np.cos(angle))
         if signX == 0:
