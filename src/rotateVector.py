@@ -27,14 +27,13 @@ while not end:
     events = sense.stick.get_events()
     deltaTime = time.time() - prevTime
     prevTime = prevTime + deltaTime
-    #dPhi = omega * deltaTime
-    dPhi = 1
+    dPhi = omega * deltaTime
     if len(events) != 0:
         for event in events:
             print(event.direction, event.action)
             if event.direction == "middle":
                 end = True
-            elif event.direction == "left" and event.action == "pressed":
+            elif (event.direction == "left" and event.action == "pressed") or (event.direction == "left" and event.action == "held"):
                 print("echo")
                 rotMatrix = np.array([[1.0, 0.0, 0.0], [0.0, np.cos(dPhi), -np.sin(dPhi)], [0.0, np.sin(dPhi), np.cos(dPhi)]])
                 line = line.dot(rotMatrix)
