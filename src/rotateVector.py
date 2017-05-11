@@ -34,8 +34,9 @@ while not end:
             if event.direction == "middle":
                 end = True
             elif event.direction == "left" and event.action == "pressed":
+                print("echo")
                 rotMatrix = np.array([[1.0, 0.0, 0.0], [0.0, np.cos(dPhi), -np.sin(dPhi)], [0.0, np.sin(dPhi), np.cos(dPhi)]])
                 line = line.dot(rotMatrix)
-                sense.set_pixels(draw3dVector([4, 4], line, [255, 0, 0]))
+        sense.set_pixels(draw3dVector([4, 4], line, [255, 0, 0]))
     
 sense.clear()
