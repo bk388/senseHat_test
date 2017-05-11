@@ -27,7 +27,8 @@ while not end:
     events = sense.stick.get_events()
     if len(events) != 0:
         for event in events:
-            print(event[1], event[2])
-        end = True
+            print(event.direction, event.action)
+            if event.direction == "middle":
+                end = True
     
 sense.clear()
