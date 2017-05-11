@@ -88,7 +88,12 @@ def draw3dVector(centre, vecToDraw, colour):
     length = np.linalg.norm(vecToDraw[:2])
     angle = 0.0
     if vecToDraw[0] == 0.0:
-        angle = np.pi
+        if vecToDraw[1] >= 0:
+            angle = np.pi
+        else:
+            angle = -np.pi
     else:
         angle = np.arctan(vecToDraw[1]/vecToDraw[0])
+        if vecToDraw[1] < 0:
+            angle = -angle
     return getLineImage(centre, angle, length, colour)
