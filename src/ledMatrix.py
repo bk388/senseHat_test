@@ -11,7 +11,9 @@ def getPixelValue(px, centre, angle, length, intensity=1.0, gaussian=False):
     theLine = theLine * length
         
     if gaussian:
-        if np.dot(theLine, px) <= 0 or length == 0:
+        if px == [0, 0]:
+            dist = 0
+        elif np.dot(theLine, px) <= 0 or length == 0:
             dist = np.linalg.norm(px)
         elif np.dot(px-theLine, -theLine) <= 0:
             dist = np.linalg.norm(px-theLine)
