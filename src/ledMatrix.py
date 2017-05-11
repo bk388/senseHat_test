@@ -83,3 +83,12 @@ def getLineImage(centre, angle, length, colour, width=8, height=8):
     colour = np.array(colour)
     ledValues = (np.array([ledIntensities, ledIntensities, ledIntensities]).T*colour).astype(int)
     return ledValues.reshape(64, 3)
+
+def draw3dVector(centre, vecToDraw, colour):
+    length = np.linalg.norm(vecToDraw[:2])
+    angle = 0.0
+    if vecToDraw[0] == 0.0:
+        angle = np.pi
+    else:
+        angle = np.arctan(vecToDraw[1]/vecToDraw[0])
+    return getLineImage(centre, angle, length, colour)
