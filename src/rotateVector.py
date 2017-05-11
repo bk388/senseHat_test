@@ -26,7 +26,7 @@ end = False
 while not end:
     events = sense.stick.get_events()
     if len(events) != 0:
-        print(event for event in events)
-        end = True
+        for event in events:
+            print(event)
     
 sense.clear()
