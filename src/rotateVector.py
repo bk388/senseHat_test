@@ -5,7 +5,7 @@ import time
 sense = SenseHat()
 sense.set_imu_config(True, True, True)
 
-line = np.array([2.0, 0.0, 5.0])
+line = np.array([0.0, 0.0, 5.0])
 sense.set_pixels(draw3dVector([0, 0], line, [255, 0, 0]))
 sense.stick.get_events()
 
