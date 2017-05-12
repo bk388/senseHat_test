@@ -42,6 +42,12 @@ while not end:
             elif event.direction == "right" and event.action == "pressed":
                 rotMatrix = np.array([[np.cos(dPhi), 0.0, np.sin(dPhi)], [0.0, 1.0, 0.0], [-np.sin(dPhi), 0.0, np.cos(dPhi)]])
                 line = line.dot(rotMatrix)
+            elif event.direction == "up" and event.action == "pressed":
+                rotMatrix = np.array([[1.0, 0.0, 0.0], [0.0, np.cos(dPhi), -np.sin(dPhi)], [0.0, np.sin(dPhi), np.cos(dPhi)]])
+                line = line.dot(rotMatrix)
+            elif event.direction == "down" and event.action == "pressed":
+                rotMatrix = np.array([[1.0, 0.0, 0.0], [0.0, np.cos(dPhi), np.sin(dPhi)], [0.0, -np.sin(dPhi), np.cos(dPhi)]])
+                line = line.dot(rotMatrix)
         sense.set_pixels(draw3dVector([4, 4], line, [255, 0, 0]))
     
 sense.clear()
