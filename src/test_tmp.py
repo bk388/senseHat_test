@@ -2,7 +2,7 @@
 import time
 import numpy as np
 
-line = np.array([0, 0, 5])
+lines = np.array([[1, 0, 0], [0, 1, 0], [0, 0, 1]])
 #print(draw3dVector(0, np.array([4, 4, 0]), 0))
 for tick in range(10):
     print(time.time())
