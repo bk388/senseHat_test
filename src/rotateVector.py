@@ -10,7 +10,8 @@ lineY = np.array([0.0, 5.0, 0.0])
 lineZ = np.array([0.0, 0.0, 5.0])
 lines = np.array([lineX, lineY, lineZ])
 
-sense.set_pixels(draw3dVector([4, 4], lineZ, [255, 0, 0]))
+image = draw3dVector([4, 4], lines[0], [255, 0, 0]) + draw3dVector([4, 4], lines[1], [0, 255, 0]) + draw3dVector([4, 4], lineZ, [0, 0, 255])
+sense.set_pixels(image)
 sense.stick.get_events()
 
 omega = 1.0
@@ -56,6 +57,6 @@ while not end:
                 #lineZ = lineZ.dot(rotMatrix)
                 lines = np.dot(rotMatrix, lines)
         image = draw3dVector([4, 4], lines[0], [255, 0, 0]) + draw3dVector([4, 4], lines[1], [0, 255, 0]) + draw3dVector([4, 4], lineZ, [0, 0, 255])
-        sense.set_pixels()
+        sense.set_pixels(image)
     
 sense.clear()
