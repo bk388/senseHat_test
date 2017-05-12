@@ -43,20 +43,20 @@ while not end:
                 #rotMatrix = np.array([[1.0, 0.0, 0.0], [0.0, np.cos(dPhi), -np.sin(dPhi)], [0.0, np.sin(dPhi), np.cos(dPhi)]])
                 rotMatrix = np.array([[np.cos(dPhi), 0.0, -np.sin(dPhi)], [0.0, 1.0, 0.0], [np.sin(dPhi), 0.0, np.cos(dPhi)]])
                 #lineZ = lineZ.dot(rotMatrix)
-                lines = np.dot(rotMatrix, lines)
+                lines = np.dot(lines, rotMatrix)
             elif event.direction == "right" and event.action == "pressed":
                 rotMatrix = np.array([[np.cos(dPhi), 0.0, np.sin(dPhi)], [0.0, 1.0, 0.0], [-np.sin(dPhi), 0.0, np.cos(dPhi)]])
                 #lineZ = lineZ.dot(rotMatrix)
-                lines = np.dot(rotMatrix, lines)
+                lines = np.dot(lines, rotMatrix)
             elif event.direction == "up" and event.action == "pressed":
                 rotMatrix = np.array([[1.0, 0.0, 0.0], [0.0, np.cos(dPhi), -np.sin(dPhi)], [0.0, np.sin(dPhi), np.cos(dPhi)]])
                 #lineZ = lineZ.dot(rotMatrix)
-                lines = np.dot(rotMatrix, lines)
+                lines = np.dot(lines, rotMatrix)
             elif event.direction == "down" and event.action == "pressed":
                 rotMatrix = np.array([[1.0, 0.0, 0.0], [0.0, np.cos(dPhi), np.sin(dPhi)], [0.0, -np.sin(dPhi), np.cos(dPhi)]])
                 #lineZ = lineZ.dot(rotMatrix)
-                lines = np.dot(rotMatrix, lines)
-        image = draw3dVector([4, 4], lines[0], [255, 0, 0]) + draw3dVector([4, 4], lines[1], [0, 255, 0]) + draw3dVector([4, 4], lineZ, [0, 0, 255])
+                lines = np.dot(lines, rotMatrix)
+        image = draw3dVector([4, 4], lines[0], [255, 0, 0]) + draw3dVector([4, 4], lines[1], [0, 255, 0]) + draw3dVector([4, 4], lines[2], [0, 0, 255])
         sense.set_pixels(image)
     
 sense.clear()
