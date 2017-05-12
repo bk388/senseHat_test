@@ -19,7 +19,7 @@ def getPixelValue(px, centre, angle, length, intensity=1.0, gaussian=True):
             lineDirection = theLine/length
             rotPi = np.array([[0, 1], [-1, 0]])
             dist = px.dot(lineDirection.dot(rotPi))
-        intensity = np.exp(-8.0*(dist**2.0))
+        intensity = np.exp(-4.0*(dist**2.0))
         if px[0] == 0 and px[1] == 0:
             intensity = 1.0
         
