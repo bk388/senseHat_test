@@ -1,7 +1,6 @@
 from ledMatrix import *
 from sense_hat import SenseHat
 import time
-from rotateVector import rotMatrix
 
 def main():
     sense = SenseHat()
