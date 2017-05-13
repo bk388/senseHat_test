@@ -35,8 +35,13 @@ while len(sense.stick.get_events()) == 0:
     rotMatrix = getRotMat(yaw, pitch, roll)
     
     vec2draw = vertVect.dot(rotMatrix)
+    vec2draw = vec2draw.dot(np.array([[0.0, 1.0, 0.0],
+                                      [1.0, 0.0, 0.0],
+                                      [0.0, 0.0, 1.0]]))
+    
+    sense.set_pixels(draw3dVector([4, 4], vec2draw, [255, 0, 0]))
     
     print(vec2draw)
-    time.sleep(2)
+    time.sleep(1)
     
 sense.clear()
