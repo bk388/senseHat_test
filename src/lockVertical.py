@@ -25,6 +25,8 @@ def main():
         time.sleep(2)
         
     sense.clear()
+    
+main()
         
 def getRotMat(yaw, pitch, roll):
         yawMat = np.array([[np.cos(yaw), -np.sin(yaw), 0.0], 
