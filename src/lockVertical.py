@@ -49,7 +49,7 @@ while len(sense.stick.get_events()) == 0:
     lines2draw = lines2draw.dot(np.array([[-1.0, 0.0, 0.0],
                                           [0.0, 1.0, 0.0],
                                           [0.0, 0.0, 1.0]]))
-    image = image = draw3dVector([4, 4], lines[0], [255, 0, 0]) + draw3dVector([4, 4], lines[1], [0, 255, 0]) + draw3dVector([4, 4], lines[2], [0, 0, 255])
+    image = draw3dVector([4, 4], lines2draw[0], [255, 0, 0]) + draw3dVector([4, 4], lines2draw[1], [0, 255, 0]) + draw3dVector([4, 4], lines2draw[2], [0, 0, 255])
     sense.set_pixels(image)
     
     #print(vec2draw)
