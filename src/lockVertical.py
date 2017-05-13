@@ -13,4 +13,4 @@ sense.stick.get_events()
 while len(sense.stick.get_events()) == 0:
     orientation = sense.get_orientation_radians()
     #rotYaw = np.array([[1.0, 0.0, 0.0], [0.0, np.cos(dPhi), -np.sin(dPhi)], [0.0, np.sin(dPhi), np.cos(dPhi)]])
-    print(orientation[0])
+    print(orientation["yaw"])
