@@ -44,7 +44,7 @@ while len(sense.stick.get_events()) == 0:
     
     sense.set_pixels(draw3dVector([4, 4], vec2draw, [255, 0, 0]))
     
-    print(vec2draw)
-    time.sleep(1)
+    #print(vec2draw)
+    time.sleep(0.01)
     
 sense.clear()
